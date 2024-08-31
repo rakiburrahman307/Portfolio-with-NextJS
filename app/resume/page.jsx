@@ -21,7 +21,7 @@ import { motion } from "framer-motion";
 const Resume = () => {
   const about = {
     title: "About Me",
-    description: "lorem Ips lorem Ips",
+    description: "I’m Rakibur Rahman, a recent Computer Science graduate with a passion for web development. I enjoy creating websites and applications that are both functional and visually appealing. I’m eager to apply my skills and learn more in a professional setting. Feel free to explore my projects and reach out if you’d like to connect!",
     information: [
       {
         fieldName: "Name",
