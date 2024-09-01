@@ -2,10 +2,18 @@ import Photo from "@/components/Photo";
 import Social from "@/components/Social";
 import Stats from "@/components/Stats";
 import { Button } from "@/components/ui/button";
+import Head from "next/head";
 import { FiDownload } from "react-icons/fi";
 const Home = () => {
   return (
     <section className='h-full'>
+      <Head>
+        <title>Home - Rakibur Rahman</title>
+        <meta
+          name='description'
+          content={`Details about Rakibur Rahman Home page.`}
+        />
+      </Head>
       <div className='container mx-auto h-full'>
         <div className='flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24'>
           {/* text */}
@@ -41,12 +49,12 @@ const Home = () => {
             </div>
           </div>
           {/* photo */}
-          <div className="order-1 xl:order-none mb-8 xl:mb-0">
-            <Photo/>
+          <div className='order-1 xl:order-none mb-8 xl:mb-0'>
+            <Photo />
           </div>
         </div>
       </div>
-      <Stats/>
+      <Stats />
     </section>
   );
 };

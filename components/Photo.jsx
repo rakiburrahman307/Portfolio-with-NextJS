@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import Image from "next/image"; // Correct import
+import Image from "next/image";
 
 const Photo = () => {
   return (
@@ -10,7 +10,7 @@ const Photo = () => {
         initial={{ opacity: 0 }}
         animate={{
           opacity: 1,
-          transition: { delay: 2, duration: 0.4, ease: "easeIn" },
+          transition: { delay: 1, duration: 0.4, ease: "easeIn" },
         }}
       >
         {/* Image */}

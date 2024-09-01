@@ -14,6 +14,7 @@ import {
   SelectItem,
   SelectLabel,
 } from "@/components/ui/select";
+import Head from "next/head";
 
 const info = [
   {
@@ -33,69 +34,99 @@ const info = [
       "House # 08, Road # 6, Rupnagar R/A, Mirpur 2, Dhaka, Bangladesh",
   },
 ];
-const Contact = () => {
-  return <motion.section
-  initial={{opacity:0}}
-  animate={{
-    opacity: 1,
-    transition: { delay: 2, duration: 0.3, ease: "easeIn" },
-  }}
-  >
-    <div className="container mx-auto">
-        <div className="flex flex-col xl:flex-row gap-[30px]">
-            <div className="xl:w-[54%] order-2 xl:order-none">
-                {/* form  */}
-                <form action="" className="flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl ">
-                   <h2 className="text-4xl text-accent">Lets Work Together</h2>
-                   <p className="text-white/60">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci assumenda at, debitis vel</p>
-                   {/* input  */}
-                   <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <Input type="firstName" placeholder="First Name" />
-                    <Input type="lastName" placeholder="Last Name" />
-                    <Input type="email" placeholder="Email Address" />
-                    <Input type="phone" placeholder="Phone Number" />
 
-                   </div>
-                   {/* Select  */}
-                   <Select>
-                    <SelectTrigger className="w-full">
-                        <SelectValue placeholder="Select a Service"/>
-                     
-                    </SelectTrigger>
-                    <SelectContent>
-                        <SelectGroup>
-                            <SelectLabel>Select a Service</SelectLabel>
-                            <SelectItem value="service1">Full Stack Development</SelectItem>
-                            <SelectItem value="service2">Font-End Development</SelectItem>
-                            <SelectItem value="service3">Back-End Development</SelectItem>
-                        </SelectGroup>
-                    </SelectContent>
-                   </Select>
-                   {/* textarea  */}
-                   <Textarea className="h-[200px]" placeholder="Type your message here." />
-                   <Button size='md' className="max-w-40">Send Message</Button>
-                </form>
-            </div>
-            <div className="flex-1 flex items-center xl:justify-end order-1 xl:order-none mb-8 xl:mb-0">
-                <ul className="flex flex-col gap-10 ">
-                    {
-                        info?.map((item, index) => (
-                            <li key={index} className="flex gap-6 items-center">
-                                <div className="w-[52px] h-[52px] xl:w-[72px] xl:h-[72px] bg-[#27272c] text-accent rounded-md flex items-center justify-center">
-                                   <div className="text-[28px]">{item?.icon}</div>
-                                </div>
-                                <div className="flex-1">
-                                    <p className="text-white/60">{item?.title}</p>
-                                    <h3 className="text-xl text-white">{item?.description}</h3>
-                                </div>
-                            </li>
-                        ))
-                    }
-                </ul>
-            </div>
+const Contact = () => {
+  return (
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{
+        opacity: 1,
+        transition: { delay: 1, duration: 0.4, ease: "easeIn" },
+      }}
+    >
+      {/* head for better seo  */}
+      <Head>
+        <title>Contact - Rakibur Rahman</title>
+        <meta
+          name='description'
+          content='Details about Rakibur Rahman Contact page.'
+        />
+        <meta property='og:title' content='Contact - Rakibur Rahman' />
+        <meta
+          property='og:description'
+          content='Details about Rakibur Rahman Contact page.'
+        />
+        <meta property='og:type' content='portfolio website' />
+      </Head>
+      <div className='container mx-auto'>
+        <div className='flex flex-col xl:flex-row gap-8'>
+          <div className='xl:w-2/3 order-2 xl:order-1'>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                // Handle form submission hereá
+              }}
+              className='flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl'
+            >
+              <h2 className='text-4xl text-accent'>Let&apos;s Work Together</h2>
+              <p className='text-white/60'>
+                If you have any questions or would like to get in touch, please
+                fill out the form below or use the provided contact details.
+              </p>
+              <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+                <Input type='text' placeholder='First Name' required />
+                <Input type='text' placeholder='Last Name' required />
+                <Input type='email' placeholder='Email Address' required />
+                <Input type='tel' placeholder='Phone Number' />
+              </div>
+              <Select>
+                <SelectTrigger className='w-full'>
+                  <SelectValue placeholder='Select a Service' />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectGroup>
+                    <SelectLabel>Choose a Service</SelectLabel>
+                    <SelectItem value='fullstack'>
+                      Full Stack Development
+                    </SelectItem>
+                    <SelectItem value='frontend'>
+                      Front-End Development
+                    </SelectItem>
+                    <SelectItem value='backend'>
+                      Back-End Development
+                    </SelectItem>
+                  </SelectGroup>
+                </SelectContent>
+              </Select>
+              <Textarea
+                className='h-48'
+                placeholder='Type your message here.'
+                required
+              />
+              <Button size='lg' className='max-w-xs'>
+                Send Message
+              </Button>
+            </form>
+          </div>
+          <div className='flex-1 flex items-center xl:justify-end order-1 xl:order-2'>
+            <ul className='flex flex-col gap-10'>
+              {info.map((item, index) => (
+                <li key={index} className='flex gap-6 items-center'>
+                  <div className='w-12 h-12 xl:w-16 xl:h-16 bg-[#27272c] text-accent rounded-md flex items-center justify-center'>
+                    <div className='text-2xl'>{item.icon}</div>
+                  </div>
+                  <div className='flex-1'>
+                    <p className='text-white/60'>{item.title}</p>
+                    <h3 className='text-xl text-white'>{item.description}</h3>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
-    </div>
-  </motion.section>;
+      </div>
+    </motion.section>
+  );
 };
 
 export default Contact;

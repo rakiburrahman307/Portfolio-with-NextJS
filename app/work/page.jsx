@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useCallback } from "react";
 import { motion } from "framer-motion";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -12,90 +12,107 @@ import {
 } from "@/components/ui/tooltip";
 import Link from "next/link";
 import Image from "next/image";
-import WorkSliderButton from "@/components/WorkSliderButton";
+import WorkSliderButton from "@/components/utilities/WorkSliderButton";
+import Head from "next/head";
+
+// Mock data
 const workspace = [
   {
     num: "01",
     category: "fullstack",
     title: "project 1",
     description:
-      "  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, quidem at. Aperiam recusandae odio impedit?",
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, quidem at. Aperiam recusandae odio impedit?",
     stacks: [{ name: "html 5" }, { name: "css 3" }, { name: "javaScript" }],
-    image: "",
-    live: "",
-    github: "",
+    image: "/images/project1.jpg",
+    live: "https://example.com/live1",
+    github: "https://github.com/example1",
   },
   {
     num: "02",
     category: "fullstack",
     title: "project 2",
     description:
-      "  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, quidem at. Aperiam recusandae odio impedit?",
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, quidem at. Aperiam recusandae odio impedit?",
     stacks: [{ name: "html 5" }, { name: "css 3" }, { name: "javaScript" }],
-    image: "",
-    live: "",
-    github: "",
+    image: "/images/project2.jpg",
+    live: "https://example.com/live2",
+    github: "https://github.com/example2",
   },
   {
     num: "03",
     category: "fullstack",
     title: "project 3",
     description:
-      "  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, quidem at. Aperiam recusandae odio impedit?",
+      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, quidem at. Aperiam recusandae odio impedit?",
     stacks: [{ name: "html 5" }, { name: "css 3" }, { name: "javaScript" }],
-    image: "",
-    live: "",
-    github: "",
+    image: "/images/project3.jpg",
+    live: "https://example.com/live3",
+    github: "https://github.com/example3",
   },
 ];
+
 const Work = () => {
   const [project, setProject] = useState(workspace[0]);
 
-  const handleSlideChange = (slider) => {
-    //  get current slide index
+  // Use useCallback to memoize the event handler
+  const handleSlideChange = useCallback((slider) => {
     const currentIdx = slider.activeIndex;
-    // update project slide base on currentIdx change
     setProject(workspace[currentIdx]);
-  };
+  }, []);
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{
         opacity: 1,
-        transition: { delay: 2, duration: 0.3, ease: "easeIn" },
+        transition: { delay: 1, duration: 0.4, ease: "easeIn" },
       }}
       className='min-h-[80vh] flex flex-col justify-center py-12 xl:px-0'
     >
+      {/* head for better seo  */}
+      <Head>
+        <title>Work - Rakibur Rahman</title>
+        <meta
+          name='description'
+          content='Details about Rakibur Rahman Work page.'
+        />
+        <meta property='og:title' content='Work - Rakibur Rahman' />
+        <meta
+          property='og:description'
+          content='Details about Rakibur Rahman Work page.'
+        />
+        <meta property='og:type' content='portfolio website' />
+      </Head>
       <div className='container mx-auto'>
         <div className='flex flex-col xl:flex-row xl:gap-[30px]'>
           <div className='w-full xl:w-[50%] xl:h-[460px] flex flex-col xl:justify-between order-2 xl:order-none'>
             <div className='flex flex-col gap-[30px] h-[50%]'>
-              {/* outline number  */}
+              {/* Outline number */}
               <div className='text-8xl leading-none font-extrabold text-transparent text-outline'>
                 {project?.num}
               </div>
-              {/* category  */}
+              {/* Category */}
               <h2 className='text-[42px] leading-none font-bold text-white group-hover:text-accent transition-all duration-500 capitalize'>
                 {project?.category} Project
               </h2>
-              {/* description  */}
+              {/* Description */}
               <p className='text-white/60'>{project?.description}</p>
-              {/* stack */}
+              {/* Stack */}
               <ul className='flex gap-4'>
                 {project?.stacks?.map((stack, idx) => (
                   <li key={idx} className='text-xl text-accent'>
                     {stack?.name}
-                    {/* remove the last coma  */}
                     {idx !== project?.stacks?.length - 1 && ","}
                   </li>
                 ))}
               </ul>
-              {/* border  */}
+              {/* Border */}
               <div className='border border-white/20'></div>
-              {/* buttons  */}
+              {/* Buttons */}
               <div className='flex items-center gap-4'>
-                {/* live projects button  */}
-                <Link href={project?.live}>
+                {/* Live project button */}
+                <Link href={project?.live} passHref>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className='w-[78px] h-[78px] rounded-full bg-white/5 flex justify-center items-center group'>
@@ -109,8 +126,8 @@ const Work = () => {
                     </Tooltip>
                   </TooltipProvider>
                 </Link>
-                {/* github projects button  */}
-                <Link href={project?.live}>
+                {/* GitHub project button */}
+                <Link href={project?.github} passHref>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className='w-[78px] h-[78px] rounded-full bg-white/5 flex justify-center items-center group'>
@@ -137,22 +154,23 @@ const Work = () => {
               {workspace?.map((work, idx) => (
                 <SwiperSlide key={idx} className='w-full'>
                   <div className='h-[460px] relative group flex justify-center items-center bg-pink-50/20'>
-                    {/* overlay  */}
+                    {/* Overlay */}
                     <div className='absolute top-0 bottom-0 w-full h-full bg-black/10 z-10'></div>
-                    {/* image  */}
+                    {/* Image */}
                     <div className='relative w-full h-full'>
                       <Image
                         src={work?.image}
                         fill
                         alt={work?.title}
                         className='object-cover'
+                        priority={idx === 0} // Load first image with priority
                       />
                     </div>
                   </div>
                 </SwiperSlide>
               ))}
               <WorkSliderButton
-                containerStyles='flex gap-2  absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none'
+                containerStyles='flex gap-2 absolute right-0 bottom-[calc(50%_-_22px)] xl:bottom-0 z-20 w-full justify-between xl:w-max xl:justify-none'
                 buttonStyles='bg-accent hover:bg-accent-hover text-primary text-[22px] w-[44px] h-[44px] flex justify-center items-center transition-all duration-300'
                 iconStyles='text-black/80'
               />
@@ -160,10 +178,8 @@ const Work = () => {
           </div>
         </div>
       </div>
-      <div className=''></div>
     </motion.div>
   );
 };
 
 export default Work;
-Work;
