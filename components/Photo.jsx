@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import profile from "../assets/profile/images.jpg"
 
 const Photo = () => {
   return (
@@ -20,14 +21,14 @@ const Photo = () => {
             opacity: 1,
             transition: { delay: 2.4, duration: 0.4, ease: "easeInOut" },
           }}
-          className='w-[298px] h-[298px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute'
+          className='w-[290px] h-[290px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute'
         >
           <Image
-            src=''
+            src={profile}
             quality={100}
             alt='Photography'
             fill
-            className='object-contain'
+            className='object-contain object-center rounded-full'
           />
         </motion.div>
 

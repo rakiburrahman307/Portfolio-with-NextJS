@@ -1,10 +1,14 @@
+"use client";
 import Photo from "@/components/Photo";
 import Social from "@/components/Social";
 import Stats from "@/components/Stats";
-import { Button } from "@/components/ui/button";
 import Head from "next/head";
+import { TypeAnimation } from "react-type-animation";
+import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
+
 const Home = () => {
+  const fileUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/resume.pdf`;
   return (
     <section className='h-full'>
       <Head>
@@ -18,21 +22,30 @@ const Home = () => {
         <div className='flex flex-col xl:flex-row items-center justify-between xl:pt-8 xl:pb-24'>
           {/* text */}
           <div className='text-center xl:text-left order-2 xl:order-none'>
-            <span className='text-xl'>Web Developer</span>
+            <span className='text-5xl font-extrabold'>Hello I&apos;m</span>
             <h1 className='h1 mb-6'>
-              Hello i&apos;m <br />{" "}
               <span className='text-accent'>Rakibur Rahman</span>
+              <br />
+              <TypeAnimation
+                sequence={["Web Developer", 1500, "Web Designer", 1000]}
+                speed={30}
+                style={{ fontSize: "0.8em", color: "#00ff99" }}
+                repeat={Infinity}
+              />
             </h1>
+
             <p className='max-w-[500px] mb-9 text-white/80'>
-              I am web developer creates and maintains websites, ensuring they
-              are visually appealing, functional, and responsive across devices.
-              They work on both the front-end and back-end, using coding
-              languages like HTML, CSS, and JavaScript and React to deliver
-              smooth online experiences.
+              I am a web developer who creates and maintains websites, ensuring
+              they are visually appealing, functional, and responsive across
+              devices. I work on both the front-end and back-end, using coding
+              languages like HTML, CSS, JavaScript, and React to deliver smooth
+              online experiences.
             </p>
-            {/* button and social  */}
+            {/* button and social */}
             <div className='flex flex-col xl:flex-row items-center gap-8'>
               <Button
+                as='a'
+                href={fileUrl}
                 variant='outline'
                 size='lg'
                 className='uppercase flex items-center gap-2'
@@ -40,6 +53,7 @@ const Home = () => {
                 <span>Download CV</span>
                 <FiDownload className='text-xl' />
               </Button>
+
               <div className='mb-8 xl:mb-0'>
                 <Social
                   containerStyles='flex gap-6'
