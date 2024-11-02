@@ -64,7 +64,7 @@ const Contact = () => {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
-                // Handle form submission hereá
+                // Handle form submission here
               }}
               className='flex flex-col gap-6 p-10 bg-[#27272c] rounded-xl'
             >
