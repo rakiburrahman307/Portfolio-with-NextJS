@@ -14,41 +14,92 @@ import Link from "next/link";
 import Image from "next/image";
 import WorkSliderButton from "@/components/utilities/WorkSliderButton";
 import Head from "next/head";
-
+import easyMart from "../../assets/work/easyMart.png";
+import weatherApp from "../../assets/work/weatherApp.png";
+import newEra from "../../assets/work/newEra.png";
+import uniStayHub from "../../assets/work/uniStayHub.png";
+import jonSwift from "../../assets/work/jobSwift.png";
 // Mock data
 const workspace = [
   {
     num: "01",
-    category: "fullstack",
-    title: "project 1",
+    category: "MERN Stack",
+    title: "E-commerce",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, quidem at. Aperiam recusandae odio impedit?",
-    stacks: [{ name: "html 5" }, { name: "css 3" }, { name: "javaScript" }],
-    image: "/images/project1.jpg",
-    live: "https://example.com/live1",
-    github: "https://github.com/example1",
+      "This e-commerce platform is a fully functional, responsive, and dynamic web application built using the MERN stack (MongoDB, Express.js, React, and Node.js) with React Bootstrap for styling. The platform provides a seamless shopping experience for users and includes robust features for both customers and administrators.",
+    stacks: [{ name: "JavaScript" },{name: "React"},{name: "Bootstrap"},{name:"Express js"}, {name: "Nodejs"}],
+    image: easyMart,
+    live: "https://easy-mart-ecommerce-final.netlify.app",
+    github: "https://github.com/rakiburrahman307/easy-mart-react-ecommerce",
   },
   {
     num: "02",
-    category: "fullstack",
-    title: "project 2",
+    category: "Font-End",
+    title: "Weather App",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, quidem at. Aperiam recusandae odio impedit?",
-    stacks: [{ name: "html 5" }, { name: "css 3" }, { name: "javaScript" }],
-    image: "/images/project2.jpg",
-    live: "https://example.com/live2",
-    github: "https://github.com/example2",
+      "This modern weather application provides accurate and real-time weather data using the OpenWeatherAPI, delivering a sleek and intuitive user experience. Built with React and TypeScript, the app combines powerful tools like Chakra UI, Tailwind CSS, and Recharts to offer a responsive and visually appealing interface.",
+    stacks: [
+      { name: "React" },
+      { name: "TypeScript" },
+      { name: "Tailwind CSS" },
+  
+    ],
+    image: weatherApp,
+    live: "https://sky-snap-weather-app.netlify.app",
+    github: "https://github.com/rakiburrahman307/whether-app-react",
   },
   {
     num: "03",
-    category: "fullstack",
-    title: "project 3",
+    category: "Font-End",
+    title: "The New Era Consultancy",
     description:
-      "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae, quidem at. Aperiam recusandae odio impedit?",
-    stacks: [{ name: "html 5" }, { name: "css 3" }, { name: "javaScript" }],
-    image: "/images/project3.jpg",
-    live: "https://example.com/live3",
-    github: "https://github.com/example3",
+      "The New Era Consultancy website is a modern and professional platform designed to showcase the firm's expertise in providing guidance for studying, working, and traveling abroad. With a sleek and dynamic design, the website ensures a seamless user experience while reflecting the brand's core values of innovation and trust.",
+    stacks:[
+      { name: "React" },
+      { name: "React Router" },
+      { name: "Tailwind CSS" },
+
+    ],
+    image: newEra,
+    live: "https://consultancynewera.com",
+    github: "https://github.com/rakiburrahman307/NEW-ERA-CONSULTANCY",
+  },
+  {
+    num: "04",
+    category: "MERN Stack",
+    title: "Unity Hub",
+    description:
+      "Unity Hub Hostel Management System is a modern web application designed to streamline and automate hostel management operations. This system caters to hostel administrators, residents, and staff, providing features for managing bookings, payments, resident records, and announcements. The application prioritizes user-friendliness, security, and scalability to serve hostels of all sizes.",
+      stacks: [
+        { name: "React.js" },
+        { name: "Tailwind CSS" },
+        { name: "Firebase" },
+        { name: "MongoDB" },
+        { name: "Node.js" },
+   
+      ],
+      
+    image: uniStayHub,
+    live: "https://unistayhub-hostel-manegement.netlify.app",
+    github: "https://github.com/rakiburrahman307/UniStyHub-Hostel-Management-ReactJs",
+  },
+  {
+    num: "05",
+    category: "MERN Stack",
+    title: "Job Swift",
+    description:
+      "Job Swift is an online platform dedicated to connecting job seekers with a wide range of employment opportunities. Whether you're a seasoned professional looking for your next career move or a recent graduate eager to kickstart your professional journey, Job Swift has something for everyone.",
+      stacks: [
+        { name: "React.js" },
+        { name: "Tailwind CSS" },
+        { name: "Firebase" },
+        { name: "MongoDB" },
+        { name: "Node.js" },
+  
+      ],
+    image: jonSwift,
+    live: "https://job-swift-expolorejobs-managements.netlify.app",
+    github: "https://github.com/rakiburrahman307/Assignment-11",
   },
 ];
 
@@ -73,16 +124,6 @@ const Work = () => {
       {/* head for better seo  */}
       <Head>
         <title>Work - Rakibur Rahman</title>
-        <meta
-          name='description'
-          content='Details about Rakibur Rahman Work page.'
-        />
-        <meta property='og:title' content='Work - Rakibur Rahman' />
-        <meta
-          property='og:description'
-          content='Details about Rakibur Rahman Work page.'
-        />
-        <meta property='og:type' content='portfolio website' />
       </Head>
       <div className='container mx-auto'>
         <div className='flex flex-col xl:flex-row xl:gap-[30px]'>
@@ -112,7 +153,7 @@ const Work = () => {
               {/* Buttons */}
               <div className='flex items-center gap-4'>
                 {/* Live project button */}
-                <Link href={project?.live} passHref>
+                <Link href={project?.live} passHref target="_blank">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className='w-[78px] h-[78px] rounded-full bg-white/5 flex justify-center items-center group'>
@@ -127,7 +168,7 @@ const Work = () => {
                   </TooltipProvider>
                 </Link>
                 {/* GitHub project button */}
-                <Link href={project?.github} passHref>
+                <Link href={project?.github} passHref target="_blank">
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className='w-[78px] h-[78px] rounded-full bg-white/5 flex justify-center items-center group'>
@@ -162,7 +203,7 @@ const Work = () => {
                         src={work?.image}
                         fill
                         alt={work?.title}
-                        className='object-cover'
+                        className='object-fill'
                         priority={idx === 0} // Load first image with priority
                       />
                     </div>

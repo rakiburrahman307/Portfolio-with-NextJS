@@ -7,7 +7,7 @@ const Stats = () => {
     { num: 2, text: "Years Of Experience" },
     { num: 6, text: "Projects of Completed" },
     { num: 10, text: "Technology of Learning" },
-    { num: 500, text: "Codes Commits" },
+    { num: 550, text: "Codes Commits" },
   ];
   return (
     <section className='pt-4 pb-12 xl:pt-0 xl:pb-0'>

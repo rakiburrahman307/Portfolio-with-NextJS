@@ -43,15 +43,6 @@ const Resume = () => {
       {/* head for better seo  */}
       <Head>
         <title>Resume - Rakibur Rahman</title>
-        <meta
-          name='description'
-          content='Details about Rakibur Rahman Resume page.'
-        />
-        <meta property='og:title' content='Resume - Rakibur Rahman' />
-        <meta
-          property='og:description'
-          content='Details about Rakibur Rahman Resume page.'
-        />
         <meta property='og:type' content='portfolio website' />
       </Head>
       <div className='container mx-auto'>

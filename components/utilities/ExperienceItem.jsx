@@ -6,6 +6,11 @@ const experiences = {
     "Though I am a recent graduate, I have undertaken several projects and learning experiences that have equipped me with the skills needed to succeed in a professional environment.",
   items: [
     {
+      projectName: "Weather App",
+      role: "Font-End Developer",
+      year: "2024",
+    },
+    {
       projectName: "Portfolio Website",
       role: "Font-End Developer",
       year: "2024",
