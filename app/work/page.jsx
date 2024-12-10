@@ -24,7 +24,7 @@ const workspace = [
     description:
       "This e-commerce platform is a fully functional, responsive, and dynamic web application built using the MERN stack (MongoDB, Express.js, React, and Node.js) with React Bootstrap for styling. The platform provides a seamless shopping experience for users and includes robust features for both customers and administrators.",
     stacks: [{ name: "JavaScript" },{name: "React"},{name: "Bootstrap"},{name:"Express js"}, {name: "Nodejs"}],
-    image: "/easyMart.png",
+    image: "/easyMart.jpg",
     live: "https://easy-mart-ecommerce-final.netlify.app",
     github: "https://github.com/rakiburrahman307/easy-mart-react-ecommerce",
   },
@@ -40,7 +40,7 @@ const workspace = [
       { name: "Tailwind CSS" },
   
     ],
-    image: "/weatherApp.png",
+    image: "/weatherApp.jpg",
     live: "https://sky-snap-weather-app.netlify.app",
     github: "https://github.com/rakiburrahman307/whether-app-react",
   },
@@ -56,7 +56,7 @@ const workspace = [
       { name: "Tailwind CSS" },
 
     ],
-    image: "/newEra.png",
+    image: "/newEra.jpg",
     live: "https://consultancynewera.com",
     github: "https://github.com/rakiburrahman307/NEW-ERA-CONSULTANCY",
   },
@@ -75,7 +75,7 @@ const workspace = [
    
       ],
       
-    image: "/uniStayHub.png",
+    image: "/uniStayHub.jpg",
     live: "https://unistayhub-hostel-manegement.netlify.app",
     github: "https://github.com/rakiburrahman307/UniStyHub-Hostel-Management-ReactJs",
   },
@@ -93,7 +93,7 @@ const workspace = [
         { name: "Node.js" },
   
       ],
-    image: "/jobSwift.png",
+    image: "/jobSwift.jpg",
     live: "https://job-swift-expolorejobs-managements.netlify.app",
     github: "https://github.com/rakiburrahman307/Assignment-11",
   },
