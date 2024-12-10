@@ -1,8 +1,7 @@
 "use client";
-
 import { motion } from "framer-motion";
 import Image from "next/image";
-import profile from "../assets/profile/images.jpg"
+
 
 const Photo = () => {
   return (
@@ -24,7 +23,7 @@ const Photo = () => {
           className='w-[290px] h-[290px] xl:w-[498px] xl:h-[498px] mix-blend-lighten absolute'
         >
           <Image
-            src={profile}
+            src="../assets/profile/images.jpg"
             quality={100}
             alt='Photography'
             fill
