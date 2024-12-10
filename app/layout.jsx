@@ -97,6 +97,7 @@ export default function RootLayout({ children }) {
         />
         {/* Manifest */}
         <link rel='manifest' href='/site.webmanifest' />
+        <link rel="preload" href="https://rakiburrahman307.netlify.app/_next/static/media/bb3ef058b751a6ad-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
         {/* Additional meta tags for browser compatibility */}
         <meta name='theme-color' content='#ffffff' />
       </head>
