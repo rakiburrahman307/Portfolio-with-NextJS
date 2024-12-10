@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/button";
 import { FiDownload } from "react-icons/fi";
 
 const Home = () => {
-  const fileUrl = `${process.env.NEXT_PUBLIC_BASE_URL}/resume.pdf`;
+  const fileUrl = "/public/resume.pdf"; 
 
   return (
     <section className="h-full">
@@ -38,24 +38,24 @@ const Home = () => {
             </p>
             {/* button and social */}
             <div className="flex flex-col xl:flex-row items-center gap-8">
-              <Button
-                as="a"
-                href={fileUrl || "#"}
-                variant="outline"
-                size="lg"
-                className="uppercase flex items-center gap-2"
-                aria-label="Download CV of Rakibur Rahman"
-                aria-disabled={!fileUrl}
-                onClick={(e) => {
-                  if (!fileUrl) {
-                    e.preventDefault();
-                    alert("CV not available at the moment.");
-                  }
-                }}
-              >
-                <span>Download CV</span>
-                <FiDownload className="text-xl" />
-              </Button>
+            <Button
+              as="a"
+              href={fileUrl || "#"}
+              variant="outline"
+              size="lg"
+              className="uppercase flex items-center gap-2"
+              aria-label="Download CV of Rakibur Rahman"
+              aria-disabled={!fileUrl}
+              onClick={(e) => {
+                if (!fileUrl) {
+                  e.preventDefault();
+                  alert("CV not available at the moment.");
+                }
+              }}
+            >
+              <span>Download CV</span>
+              <FiDownload className="text-xl" />
+            </Button>
 
               <div className="mb-8 xl:mb-0">
                 <Social
