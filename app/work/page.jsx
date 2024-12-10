@@ -14,11 +14,7 @@ import Link from "next/link";
 import Image from "next/image";
 import WorkSliderButton from "@/components/utilities/WorkSliderButton";
 import Head from "next/head";
-import easyMart from "../../assets/work/easyMart.png";
-import weatherApp from "../../assets/work/weatherApp.png";
-import newEra from "../../assets/work/newEra.png";
-import uniStayHub from "../../assets/work/uniStayHub.png";
-import jonSwift from "../../assets/work/jobSwift.png";
+
 // Mock data
 const workspace = [
   {
