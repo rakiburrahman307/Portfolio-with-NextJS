@@ -14,6 +14,11 @@ import Link from "next/link";
 import Image from "next/image";
 import WorkSliderButton from "@/components/utilities/WorkSliderButton";
 import Head from "next/head";
+import easyMart from "../../assets/work/easyMart.jpg";
+import jobSwift from "../../assets/work/jobSwift.jpg";
+import newEra from "../../assets/work/newEra.jpg";
+import uniStayHub from "../../assets/work/uniStayHub.jpg";
+import weatherApp from "../../assets/work/weatherApp.jpg";
 
 // Mock data
 const workspace = [
@@ -23,8 +28,14 @@ const workspace = [
     title: "E-commerce",
     description:
       "This e-commerce platform is a fully functional, responsive, and dynamic web application built using the MERN stack (MongoDB, Express.js, React, and Node.js) with React Bootstrap for styling. The platform provides a seamless shopping experience for users and includes robust features for both customers and administrators.",
-    stacks: [{ name: "JavaScript" },{name: "React"},{name: "Bootstrap"},{name:"Express js"}, {name: "Nodejs"}],
-    image: "/public/easyMart.jpg",
+    stacks: [
+      { name: "JavaScript" },
+      { name: "React" },
+      { name: "Bootstrap" },
+      { name: "Express js" },
+      { name: "Nodejs" },
+    ],
+    image: easyMart,
     live: "https://easy-mart-ecommerce-final.netlify.app",
     github: "https://github.com/rakiburrahman307/easy-mart-react-ecommerce",
   },
@@ -38,9 +49,8 @@ const workspace = [
       { name: "React" },
       { name: "TypeScript" },
       { name: "Tailwind CSS" },
-  
     ],
-    image: "/public/weatherApp.jpg",
+    image: weatherApp,
     live: "https://sky-snap-weather-app.netlify.app",
     github: "https://github.com/rakiburrahman307/whether-app-react",
   },
@@ -50,13 +60,12 @@ const workspace = [
     title: "The New Era Consultancy",
     description:
       "The New Era Consultancy website is a modern and professional platform designed to showcase the firm's expertise in providing guidance for studying, working, and traveling abroad. With a sleek and dynamic design, the website ensures a seamless user experience while reflecting the brand's core values of innovation and trust.",
-    stacks:[
+    stacks: [
       { name: "React" },
       { name: "React Router" },
       { name: "Tailwind CSS" },
-
     ],
-    image: "/public/newEra.jpg",
+    image: newEra,
     live: "https://consultancynewera.com",
     github: "https://github.com/rakiburrahman307/NEW-ERA-CONSULTANCY",
   },
@@ -66,18 +75,18 @@ const workspace = [
     title: "Unity Hub",
     description:
       "Unity Hub Hostel Management System is a modern web application designed to streamline and automate hostel management operations. This system caters to hostel administrators, residents, and staff, providing features for managing bookings, payments, resident records, and announcements. The application prioritizes user-friendliness, security, and scalability to serve hostels of all sizes.",
-      stacks: [
-        { name: "React.js" },
-        { name: "Tailwind CSS" },
-        { name: "Firebase" },
-        { name: "MongoDB" },
-        { name: "Node.js" },
-   
-      ],
-      
-    image: "/public/uniStayHub.jpg",
+    stacks: [
+      { name: "React.js" },
+      { name: "Tailwind CSS" },
+      { name: "Firebase" },
+      { name: "MongoDB" },
+      { name: "Node.js" },
+    ],
+
+    image: uniStayHub,
     live: "https://unistayhub-hostel-manegement.netlify.app",
-    github: "https://github.com/rakiburrahman307/UniStyHub-Hostel-Management-ReactJs",
+    github:
+      "https://github.com/rakiburrahman307/UniStyHub-Hostel-Management-ReactJs",
   },
   {
     num: "05",
@@ -85,15 +94,14 @@ const workspace = [
     title: "Job Swift",
     description:
       "Job Swift is an online platform dedicated to connecting job seekers with a wide range of employment opportunities. Whether you're a seasoned professional looking for your next career move or a recent graduate eager to kickstart your professional journey, Job Swift has something for everyone.",
-      stacks: [
-        { name: "React.js" },
-        { name: "Tailwind CSS" },
-        { name: "Firebase" },
-        { name: "MongoDB" },
-        { name: "Node.js" },
-  
-      ],
-    image: "/public/jobSwift.jpg",
+    stacks: [
+      { name: "React.js" },
+      { name: "Tailwind CSS" },
+      { name: "Firebase" },
+      { name: "MongoDB" },
+      { name: "Node.js" },
+    ],
+    image: jobSwift,
     live: "https://job-swift-expolorejobs-managements.netlify.app",
     github: "https://github.com/rakiburrahman307/Assignment-11",
   },
@@ -149,7 +157,7 @@ const Work = () => {
               {/* Buttons */}
               <div className='flex items-center gap-4'>
                 {/* Live project button */}
-                <Link href={project?.live} passHref target="_blank">
+                <Link href={project?.live} passHref target='_blank'>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className='w-[78px] h-[78px] rounded-full bg-white/5 flex justify-center items-center group'>
@@ -164,7 +172,7 @@ const Work = () => {
                   </TooltipProvider>
                 </Link>
                 {/* GitHub project button */}
-                <Link href={project?.github} passHref target="_blank">
+                <Link href={project?.github} passHref target='_blank'>
                   <TooltipProvider delayDuration={100}>
                     <Tooltip>
                       <TooltipTrigger className='w-[78px] h-[78px] rounded-full bg-white/5 flex justify-center items-center group'>
