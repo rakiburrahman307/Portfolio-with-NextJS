@@ -69,35 +69,31 @@ export default function RootLayout({ children }) {
         />
         <meta
           property='og:image'
-          content='https://your-portfolio-url.com/og-image.jpg'
+          content='https://rakiburrahman307.netlify.app'
         />
-        <meta property='og:url' content='https://your-portfolio-url.com' />
+        <meta
+          property='og:url'
+          content='https://rakiburrahman307.netlify.app'
+        />
         <meta property='og:type' content='website' />
-        <meta property='og:site_name' content='Rakibur Rahman Portfolio' />
+        <meta property='og:Rakibur Rahman' content='Rakibur Rahman Portfolio' />
         {/* Twitter */}
-        <meta name='twitter:card' content='summary_large_image' />
         <meta name='twitter:title' content='Rakibur Rahman | Portfolio' />
         <meta
           name='twitter:description'
           content='Showcasing the projects and skills of Rakibur Rahman, a web developer specializing in React, Next.js, and modern web technologies.'
         />
-        <meta
-          name='twitter:image'
-          content='https://your-portfolio-url.com/og-image.jpg'
-        />
-        <meta name='twitter:site' content='@your_twitter_handle' />{" "}
-        {/* Replace with your Twitter handle */}
         {/* Favicon */}
-        <link rel='icon' href='/favicon.ico' />
-        {/* Apple Touch Icon */}
-        <link
-          rel='apple-touch-icon'
-          sizes='180x180'
-          href='/apple-touch-icon.png'
-        />
+        <link rel='icon' href='/r_logo.png' />
         {/* Manifest */}
         <link rel='manifest' href='/site.webmanifest' />
-        <link rel="preload" href="https://rakiburrahman307.netlify.app/_next/static/media/bb3ef058b751a6ad-s.p.woff2" as="font" type="font/woff2" crossorigin="anonymous" />
+        <link
+          rel='preload'
+          href='https://rakiburrahman307.netlify.app'
+          as='font'
+          type='font/woff2'
+          crossorigin='anonymous'
+        />
         {/* Additional meta tags for browser compatibility */}
         <meta name='theme-color' content='#ffffff' />
       </head>
