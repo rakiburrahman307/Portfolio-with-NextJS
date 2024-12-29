@@ -14,11 +14,11 @@ import Link from "next/link";
 import Image from "next/image";
 import WorkSliderButton from "@/components/utilities/WorkSliderButton";
 import Head from "next/head";
-import easyMart from "../../assets/work/easyMart.jpg";
-import jobSwift from "../../assets/work/jobSwift.jpg";
-import newEra from "../../assets/work/newEra.jpg";
-import uniStayHub from "../../assets/work/uniStayHub.jpg";
-import weatherApp from "../../assets/work/weatherApp.jpg";
+import easyMart from "../../assets/work/easyMart.png";
+import jobSwift from "../../assets/work/jobSwift.png";
+import newEra from "../../assets/work/newEra.png";
+import uniStayHub from "../../assets/work/uniStayHub.png";
+import weatherApp from "../../assets/work/weatherApp.png";
 
 // Mock data
 const workspace = [
